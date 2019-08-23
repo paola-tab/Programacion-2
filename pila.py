@@ -102,23 +102,17 @@ def validez(v):
 '''capicua'''
 def capicua(num):
     p=Pila()
+    j=0
     for i in range (len(num)):
         p.incluir(num[i])
-    j=0
-    #print(p.inspeccionar())
-    p.imprimir()
     while not p.estavacia():
         if p.inspeccionar() == num[j]:
-            j=+1
+            j=j+1
             p.extraer()
-            #return True
         else:
-            print(j)
-            print(p.tamano())
-            print(p.inspeccionar())
             return False
     return True
-print (capicua("neuquen"))
+#print (capicua("neuque"))
 
 #p=Pila()
 #(p.incluir(1))
