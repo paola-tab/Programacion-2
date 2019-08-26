@@ -135,12 +135,12 @@ class Pila2:
     def imprimir(self):
         print (self.items)
 
-p=Pila2()
-(p.incluir(1))
-(p.incluir(2))
-(p.incluir(3))
-(p.imprimir())
-print(p.extraer())
+#p=Pila2()
+#(p.incluir(1))
+#(p.incluir(2))
+#(p.incluir(3))
+#(p.imprimir())
+#print(p.extraer())
 #print(p.extraer())
 #print(p.inspeccionar())
 #print (p.items)
