@@ -24,18 +24,7 @@ class Cola:
             
     def darVuelta(self):
         self.items = (self.items)[::-1]
-
-''' Escriba una función que reciba una Cola C y mueva sus elementos a una nuevaCola
-pero manteniendo el orden de salida de los elementos.
-Al finalizar la Cola C no debe contener elementos'''
-def nuevaCola(c):
-    nueva=Cola()
-    while not c.estaVacia():
-        nueva.agregar(c.avanzar())
-        nueva.darVuelta()
-        return nueva
-print(nuevaCola('123'))
-      
+        
 #c=Cola()
 #(c.agregar(1))
 #(c.agregar(2))
@@ -45,3 +34,51 @@ print(nuevaCola('123'))
 #c.imprimir()
 #c.vaciar()
 #c.imprimir()
+''' Escriba una función que reciba una Cola C y mueva sus elementos a una nuevaCola
+pero manteniendo el orden de salida de los elementos.
+Al finalizar la Cola C no debe contener elementos'''
+def nuevaCola(C):
+    nueva=Cola()
+    while not C.estaVacia():
+        nueva.agregar(C.avanzar())
+    return nueva
+#C=Cola()
+#C.agregar(1)
+#C.agregar(2)
+#C.imprimir()
+#nuevaCola(C).imprimir()
+#print(C.estaVacia())
+
+'''Escriba una rutina que reciba dos Colas C1 y C2 de números enteros y devuelva una
+nueva Cola con los elementos concatenados en el orden C1 y C2.
+Es de destacar que las Colas recibidas nodeben ser sufrir ningún tipo de cambio o alteración'''
+def concatenados(C1,C2):
+    conca=Cola()
+    if C1.tamano() == C2.tamano():
+        while not C1.estaVacia():
+            conca.agregar(C1.avanzar())
+            conca.agregar(C2.avanzar())
+    else:
+        if C1.tamano() < C2.tamano():
+            while not C2.estaVacia():
+                conca.agregar(C2.avanzar())
+                while not C1.estaVacia():
+                    conca.agregar(C1.avanzar())
+        else:
+            if C1.tamano() > C2.tamano():
+                while not C1.estaVacia():
+                    conca.agregar(C1.avanzar())
+                while not C2.estaVacia():
+                    conca.agregar(C2.avanzar())
+    return conca
+    
+C1=Cola()
+C2=Cola()
+C1.agregar(1)
+C1.agregar(2)
+C2.agregar(3)
+C2.agregar(4)
+C2.agregar(5)
+C2.imprimir()
+C2.imprimir()
+concatenados(C1,C2).imprimir()
